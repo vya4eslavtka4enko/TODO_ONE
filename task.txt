@@ -1,6 +1,4 @@
 
 
-
-443
-fdj
-vc,x
+read
+write

@@ -7,12 +7,17 @@ while True:
             todo = input("Enter todo: ")+"\n"
             file = open('task.txt','r')
             task = file.readlines()
+            file.close()
             task.append(todo)
             file = open('task.txt','w')
             file.write('\n')
             file.writelines(task)
             file.close()
         case "show":
-            print("User choose show")
+            file = open("task.txt","r")
+            todo = file.readlines()
+            for index,item in enumerate(todo):
+                row = f"{index+1}-{item}"
+                print(row)
         case "complate":
             print('User choose complate')
