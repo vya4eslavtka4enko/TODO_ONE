@@ -24,8 +24,15 @@
 #     file = open(file,'r')
 #     content = file.read()
 #     print(content)
-temperatures = [10, 12, 14]
+# temperatures = [10, 12, 14]
  
-file = open("file.txt", 'w')
+# file = open("file.txt", 'w')
  
-    file.writelines(str(temperatures))
+#     file.writelines(str(temperatures))
+def get_max():
+    grades = [9.6, 9.2, 9.7]
+    max_value = max(grades)
+    min_value = min(grades)
+    return f"Max: {max_value}, Min: {min_value}"
+    
+print(get_max)
