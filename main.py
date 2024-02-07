@@ -3,6 +3,11 @@ def get_todo():
         task = file.readlines()
     return task
 
+
+def write_todos(filepath, todos_arg):
+    with open(filepath,'w') as file:
+        file.writelines(todos_arg)
+
 while True:
     user_action=input("Type add, show, edit, complete or exit  :")
     user_action = user_action.strip()
@@ -16,10 +21,7 @@ while True:
             task = get_todo()
             task.append('\n')
             task.append(todo)
-            file = open('task.txt','w')
-            # file.write('\n')
-            file.writelines(task)
-            file.close()
+            write_todos("task.txt",task)
             
     elif  user_action.startswith('show'):
             todo = get_todo()
@@ -40,8 +42,7 @@ while True:
             new_task = input("Enter the new task ")
             task[number_task]=new_task+'\n'
             print(task)
-            with open('task.txt','w') as file:
-                file.writelines(task)
+            write_todos('task.txt',task)
         except ValueError:
             print('Your command not valid')
             continue
@@ -52,9 +53,7 @@ while True:
             task = get_todo()
             task.remove(task[complate_task])
                 
-            file = open("task.txt",'w')
-            file.writelines(task)
-            print(task)
+            write_todos("task.txt",task)
         except IndexError:
             print("There is no item with that number ")
     elif "exit" in user_action:
