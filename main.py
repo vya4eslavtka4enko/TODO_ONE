@@ -1,13 +1,8 @@
-def get_todo():
-    with open("task.txt",'r') as file:
-        task = file.readlines()
-    return task
+from function import get_todo,write_todos
+import time
 
-
-def write_todos(filepath, todos_arg):
-    with open(filepath,'w') as file:
-        file.writelines(todos_arg)
-
+now = time.strftime("%b %d , %Y %H %M")
+print(now)
 while True:
     user_action=input("Type add, show, edit, complete or exit  :")
     user_action = user_action.strip()

@@ -1,45 +1,18 @@
-# file = open("bear.txt",'r')
-# convert_text = ''
-# content = file.readline()
-# content_split = content.split(' ')
-# for item in content_split:
-#     convert_text += " " + item.title() 
+"""
+    Coding Exercise 1
+    Your task is to create a program that generates a random whole number. Here is how the program should behave:
+    As you can see, the program first asks the user to enter a whole number. Then, once the user enters a number,
+    the program asks the user again to enter another number.
+    Then, the program returns a random number that falls between the two whole numbers. Here is another example:
+"""
+import random
 
 
-# print(convert_text)
+def random_choise(max,min):
+    list_list = range(min,max)
+    return random.choice(list)
 
-# new_member = input("Enter the  new member ")
-# file = open('member.txt','a')
-# file.write('\n')
-# file.write(new_member)
-# file.close()
+max = int(input("Enter max bound "))
+min = int(input("Enter min bound "))
 
-# filenames = ['doc.txt', 'report.txt', 'presentation.txt']
-# for item in filenames:
-#     file = open(item,'w')
-#     file.write("Hello")
-#     file.close()
-# files = ["a.txt","b.txt","c.txt"]
-# for file in files:
-#     file = open(file,'r')
-#     content = file.read()
-#     print(content)
-# temperatures = [10, 12, 14]
- 
-# file = open("file.txt", 'w')
- 
-#     file.writelines(str(temperatures))
-# def get_max():
-#     grades = [9.6, 9.2, 9.7]
-#     max_value = max(grades)
-#     min_value = min(grades)
-#     return f"Max: {max_value}, Min: {min_value}"
-    
-# print(get_max)
-def get_nr_items(str):
-    counter = 0
-    for item in str:
-        if item == ',':
-            counter+=1
-    return counter
-print(get_nr_items("Hello,my,name,valera"))
+print(random_choise(max,min))
